@@ -1,5 +1,7 @@
 require "./initializers/**"
 require "amber"
+require "../src/models/**"
+require "../src/handlers/**"
 
 # load the application_controller before controllers which depend on it
 require "../src/controllers/application_controller"

@@ -1,0 +1,56 @@
+<nav class="main-nav js-menu">
+
+  <a class="main-nav-link link-home" href="/">
+    <svg class="main-nav-icon" width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4.98 0L10 4.114V11H6.996V7.063H5.098V11H0V4.114" fill="#F00" fill-rule="evenodd"></path>
+    </svg><object class="nav-home-logo" type="image/svg+xml" data="/svg/logo.svg">Brendari</object>
+  </a>
+
+  <div class="main-nav-other">
+    <div class="main-nav-close js-close-menu">
+      <svg width="35" height="35" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" fill-rule="evenodd">
+          <circle stroke="#515151" cx="17.5" cy="17.5" r="17"></circle>
+        </g>
+        <path d="M18.9 17.485l3.535-3.535-1.414-1.414-3.535 3.535-3.535-3.534-1.414 1.414 3.535 3.535-3.534 3.536 1.414 1.415 3.535-3.536 3.536 3.535 1.415-1.414-3.536-3.535z" fill="#515151"></path>
+      </svg>
+    </div>
+
+    <%- active = context.request.path == "/about" ? "is-active" : "" %>
+    <a href="/about" class="main-nav-link <%= active %>">
+      <svg class="main-nav-icon" width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="45" cy="6" r="4.5" transform="translate(-40 -1)" stroke="#F00" fill="#F00" fill-rule="evenodd"></circle>
+      </svg>About studio
+    </a>
+
+    <%- active = context.request.path == "/projects" ? "is-active" : "" %>
+    <a href="/projects" class="main-nav-link <%= active %>">
+      <svg class="main-nav-icon" width="9" height="9" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg">
+        <path d="M.5.5h8v8h-8z" stroke="#F00" fill="#F00" fill-rule="evenodd"></path>
+      </svg>We created
+    </a>
+
+    <%- active = context.request.path == "/logos" ? "is-active" : "" %>
+    <a href="/logos" class="main-nav-link <%= active %>">
+      <svg class="main-nav-icon" width="11" height="11" viewBox="0 0 11 11" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5.5.63L.58 4.386 2.47 10.5h6.06l1.89-6.113L5.5.63z" stroke="#F00" fill="#F00" fill-rule="evenodd"></path>
+      </svg>Logos
+    </a>
+
+    <%- active = context.request.path == "/contacts" ? "is-active" : "" %>
+    <a href="/contacts" class="main-nav-link <%= active %>">
+      <svg class="main-nav-icon" width="12" height="10" viewBox="0 0 12 10" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 9.028L.883.5h10.234L6 9.028z" stroke="#F00" fill="#F00" fill-rule="evenodd"></path>
+      </svg>Contacts
+    </a>
+
+  </div>
+
+  <div class="main-nav-sandwich js-open-menu">
+    <svg width="35" height="18" viewBox="0 0 35 18" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 16h33c.552 0 1 .448 1 1s-.448 1-1 1H1c-.552 0-1-.448-1-1s.448-1 1-1zM1 0h33c.552 0 1 .448 1 1s-.448 1-1 1H1c-.552 0-1-.448-1-1s.448-1 1-1zm0 8h33c.552 0 1 .448 1 1s-.448 1-1 1H1c-.552 0-1-.448-1-1s.448-1 1-1z" fill="#474747" fill-rule="evenodd"></path>
+    </svg>
+  </div>
+  <div class="lang-switch ls-ua"></div>
+
+</nav>

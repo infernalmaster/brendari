@@ -1,0 +1,253 @@
+
+.overflow-hdn {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.big-logo {
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    top: 70px;
+    width: 50.8%;
+    padding-left: 70px;
+}
+
+.big-plate {
+    float: left;
+    height: 100vh;
+    width: 25%;
+
+    background: #121212;
+    position: relative;
+}
+
+.plate-divider {
+    position: absolute;
+    z-index: 2;
+    left: 25%;
+    height: 100%;
+    width: 1px;
+
+    &:after {
+        content: '';
+        position: absolute;
+        height: 140px;
+        bottom: 0;
+        background: #454545;
+        width: 1px;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        bottom: 165px;
+        background: #454545;
+        width: 1px;
+    }
+}
+.plate-divide-cross {
+    position: absolute;
+    bottom: 160px;
+    width: 1px;
+    height: 2px;
+    background: #969696;
+
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: -14px;
+        width: 1px;
+        height: 10px;
+        background: #969696;
+
+    }
+    &:before {
+        content: '';
+
+        position: absolute;
+        bottom: -9px;
+        left: -5px;
+        width: 10px;
+        height: 1px;
+
+        background: #969696;
+
+    }
+}
+.plate-divider-2{
+    left: 50%;
+}
+.plate-divider-3{
+    left: 75%;
+}
+
+
+$hover-link-size: 90px;
+.bp-link-wrap {
+    position: absolute;
+    z-index: 5;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+}
+.bp-link {
+    width: 400%;
+    font-size: 34px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    position: absolute;
+    display: block;
+    bottom: 57px;
+    left: 70px;
+    transition: transform 0.3s;
+    transform-origin: 0 100%;
+    line-height: 0.79;
+    will-change: transform;
+}
+.bp-link-wrap:hover .bp-link {
+    transform: scale(2.65);
+}
+
+
+
+.bp-red-line {
+    position: absolute;
+    left: 90px;
+    bottom: 33px;
+
+    display: block;
+    height: 4px;
+    width: 40px;
+    background: #FF0000;
+    transition: transform 0.3s;
+    transform-origin: 0 0;
+    will-change: transform;
+}
+
+.bp-link-wrap:hover .bp-red-line {
+    transform: scaleX(0)
+}
+
+.bp-shape {
+  position: absolute;
+  display: block;
+  left: 70px;
+  bottom: 30px;
+}
+
+
+.bp-shape-circle {
+    position: absolute;
+    left: 70px;
+    bottom: 30px;
+
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #FF0000;
+}
+.bp-shape-box {
+    position: absolute;
+    left: 70px;
+    bottom: 30px;
+
+    display: block;
+    width: 9px;
+    height: 9px;
+    background: #FF0000;
+}
+.bp-shape-pentagon {
+    position: absolute;
+    left: 70px;
+    bottom: 30px;
+
+    display: block;
+
+
+    width: 12px;
+    border-width: 6px 2.4px 0;
+    border-style: solid;
+    border-color: #FF0000 transparent;
+    &:before {
+        content: "";
+        position: absolute;
+        height: 0;
+        width: 0;
+        top: -10.5px;
+        left: -2.4px;
+        border-width: 0 6px 4.5px;
+        border-style: solid;
+        border-color: transparent transparent #FF0000;
+    }
+}
+
+
+.bp-shape-triangle {
+    position: absolute;
+    left: 70px;
+    bottom: 30px;
+    display: block;
+    width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 10px solid #FF0000;
+}
+
+.bp-studio-short {
+    font-size: 22px;
+    line-height: 30px;
+    color: #fff;
+    position: absolute;
+    left: 70px;
+    top: 40%;
+    right: 70px;
+}
+.bp-studio-short-accent {
+    color: #FF0000;
+}
+
+
+.bp-hover-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s;
+    transform: translate3d(-105%, 0, 0);
+    will-change: transform;
+}
+.bp-link-wrap:hover + .bp-hover-wrap {
+    transform: translate3d(0, 0, 0);
+}
+
+.bphw-img {
+    width: 100%;
+    height: auto;
+}
+
+.gmap {
+    height: 100%;
+}
+
+
+//.grid {
+//  display: inline-block;
+//}
+//
+//.grid__item {
+//  width: 20em;
+//  display: inline-block;
+//  vertical-align: top;
+//  margin: 1em 0.5em;
+//  text-align: left;
+//}
+

@@ -1,2 +1,2 @@
 pg:
-  database: postgres://postgres:@localhost:5432/blog_development
+  database: postgres://authuser:authuser@localhost:5432/blog_development
