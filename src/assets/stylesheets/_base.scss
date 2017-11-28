@@ -48,7 +48,21 @@ $mobile: "(max-width: 600px)";
   &:last-child {
     margin-right: 0;
   }
-  // &.link-home {}
+  &.is-active {
+    color: #9E9E9E;
+    svg {
+      circle, path {
+        fill: none;
+      }
+    }
+  }
+  &:hover {
+    svg {
+      circle, path {
+        fill: none;
+      }
+    }
+  }
 }
 
 .main-nav-icon {
@@ -59,24 +73,6 @@ $mobile: "(max-width: 600px)";
     display: inline;
     transition: transform 0.3s;
     will-change: transform;
-
-    .main-nav-link {
-      &.is-active {
-          color: #9E9E9E;
-          svg {
-            circle, path {
-              fill: none;
-            }
-          }
-      }
-      &:hover {
-        svg {
-          circle, path {
-            fill: none;
-          }
-        }
-      }
-    }
 }
 
 
@@ -175,3 +171,6 @@ $mobile: "(max-width: 600px)";
 
 }
 
+.accent {
+  color: #FF0000;
+}

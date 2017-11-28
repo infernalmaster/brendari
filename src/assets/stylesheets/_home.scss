@@ -210,10 +210,6 @@ $hover-link-size: 90px;
     top: 40%;
     right: 70px;
 }
-.bp-studio-short-accent {
-    color: #FF0000;
-}
-
 
 .bp-hover-wrap {
     position: absolute;
@@ -250,4 +246,64 @@ $hover-link-size: 90px;
 //  margin: 1em 0.5em;
 //  text-align: left;
 //}
+.home-mobile {
+  display: none;
+}
 
+@media #{$tablet} {
+  .home-desktop {
+    display: none;
+  }
+  .home-mobile {
+    display: block;
+  }
+
+
+
+  .mob-section {
+    height: 100vh;
+    width: 100%;
+    background: #121212;
+    text-align: center;
+    position: relative;
+  }
+  .mob-title {
+    font-size: 50px;
+    margin: 0;
+    color: #fff;
+
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    margin-top: -30px
+  }
+  .btn-explore {
+    border: 1px solid #FF0000;
+    border-radius: 3px;
+    font-size: 18px;
+    letter-spacing: 7px;
+    line-height: 50px;
+    padding-left: 18px;
+    width: 140px;
+    display: inline-block;
+    text-align: left;
+    color: #FF0000;
+    text-decoration: none;
+
+    position: absolute;
+    top: 65%;
+    left: 50%;
+
+    margin-left: -70px;
+  }
+  .mob-dots {
+    position: absolute;
+    top: 87%;
+    font-size: 0;
+    width: 100%;
+    .dot {
+      margin: 0 15px;
+    }
+  }
+
+}

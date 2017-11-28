@@ -424,6 +424,12 @@ body {
   position: relative; }
   .main-nav-link:last-child {
     margin-right: 0; }
+  .main-nav-link.is-active {
+    color: #9E9E9E; }
+    .main-nav-link.is-active svg circle, .main-nav-link.is-active svg path {
+      fill: none; }
+  .main-nav-link:hover svg circle, .main-nav-link:hover svg path {
+    fill: none; }
 
 .main-nav-icon {
   margin-right: 10px; }
@@ -432,12 +438,6 @@ body {
   display: inline;
   transition: transform 0.3s;
   will-change: transform; }
-  .main-nav-other .main-nav-link.is-active {
-    color: #9E9E9E; }
-    .main-nav-other .main-nav-link.is-active svg circle, .main-nav-other .main-nav-link.is-active svg path {
-      fill: none; }
-  .main-nav-other .main-nav-link:hover svg circle, .main-nav-other .main-nav-link:hover svg path {
-    fill: none; }
 
 .nav-home-logo {
   height: 15px;
@@ -505,6 +505,9 @@ body {
     top: 30px; }
   .main-nav.is-active .main-nav-other {
     transform: translate3d(0, 0, 0); } }
+
+.accent {
+  color: #FF0000; }
 
 .overflow-hdn {
   height: 100%;
@@ -681,9 +684,6 @@ body {
   top: 40%;
   right: 70px; }
 
-.bp-studio-short-accent {
-  color: #FF0000; }
-
 .bp-hover-wrap {
   position: absolute;
   width: 100%;
@@ -703,6 +703,52 @@ body {
 
 .gmap {
   height: 100%; }
+
+.home-mobile {
+  display: none; }
+
+@media (max-width: 1023px) {
+  .home-desktop {
+    display: none; }
+  .home-mobile {
+    display: block; }
+  .mob-section {
+    height: 100vh;
+    width: 100%;
+    background: #121212;
+    text-align: center;
+    position: relative; }
+  .mob-title {
+    font-size: 50px;
+    margin: 0;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    margin-top: -30px; }
+  .btn-explore {
+    border: 1px solid #FF0000;
+    border-radius: 3px;
+    font-size: 18px;
+    letter-spacing: 7px;
+    line-height: 50px;
+    padding-left: 18px;
+    width: 140px;
+    display: inline-block;
+    text-align: left;
+    color: #FF0000;
+    text-decoration: none;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    margin-left: -70px; }
+  .mob-dots {
+    position: absolute;
+    top: 87%;
+    font-size: 0;
+    width: 100%; }
+    .mob-dots .dot {
+      margin: 0 15px; } }
 
 .msnry-wrap {
   padding: 5px; }
@@ -890,7 +936,8 @@ body {
 .socials {
   margin: 0;
   padding: 0;
-  list-style: none; }
+  list-style: none;
+  margin-bottom: 70px; }
   .socials li {
     margin: 0;
     padding: 0;
@@ -916,6 +963,32 @@ body {
       height: 32px;
       background-image: url("/svg/soc/f.svg"); }
 
+.footer-links {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  .footer-links li {
+    margin: 0;
+    padding: 0; }
+
+.footer-link {
+  font-size: 16px;
+  line-height: 40px;
+  text-decoration: none;
+  color: #131313;
+  margin-left: -23px; }
+  .footer-link:before {
+    content: '';
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background: center center no-repeat;
+    margin-right: 10px; }
+  .footer-link.doc:before {
+    background-image: url("/svg/doc.svg"); }
+  .footer-link.pdf:before {
+    background-image: url("/svg/arrow.svg"); }
+
 .c-gmap-wrap {
   padding-top: 120px;
   width: 25%;
@@ -927,5 +1000,38 @@ body {
 .c-gmap {
   position: relative;
   height: 100%; }
+
+@media (max-width: 1023px) {
+  .p-contacts {
+    padding-top: 78px; }
+  .c-text-block {
+    padding: 35px 20px; }
+  .c-gmap-wrap {
+    position: static;
+    width: 100%;
+    height: 300px;
+    padding-top: 0; }
+  .c-address {
+    font-size: 18px;
+    line-height: 36px;
+    margin-bottom: 40px; }
+  .c-email {
+    font-size: 30px;
+    line-height: 37px;
+    margin-bottom: 15px; }
+  .c-phone {
+    font-size: 30px;
+    line-height: 37px;
+    margin-bottom: 54px; }
+  .socials {
+    margin-bottom: 50px;
+    text-align: center; }
+    .socials li {
+      margin: 0;
+      width: 25%; }
+  .footer-link {
+    font-size: 18px;
+    line-height: 60px;
+    margin-left: 0; } }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtYWluLmJ1bmRsZS5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/
