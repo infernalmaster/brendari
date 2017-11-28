@@ -8,7 +8,7 @@ a class="nav-item #{active}" href="/" Home
   a class="nav-item #{active} pull-right" href="/signup" Sign Up
   - active = context.request.path == "/signin" ? "active" : ""
   a class="nav-item #{active} pull-right" href="/signin" Sign In
-- active = context.request.path == "/logos" ? "active" : ""
-a class="nav-item #{active}" href="/logos" Logos
-- active = context.request.path == "/projects" ? "active" : ""
-a class="nav-item #{active}" href="/projects" Projects
+- active = context.request.path == "/admin/logos" ? "active" : ""
+a class="nav-item #{active}" href="/admin/logos" Logos
+- active = context.request.path == "/admin/projects" ? "active" : ""
+a class="nav-item #{active}" href="/admin/projects" Projects

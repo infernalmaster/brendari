@@ -28,8 +28,8 @@ Amber::Server.configure do |app|
   end
 
   routes :web do
-    resources "/projects", ProjectController
-    resources "/logos", LogoController
+    resources "/projects", ProjectController, only: [:index, :show]
+    resources "/logos", LogoController, only: [:index, :show]
 
     get "/signin", SessionController, :new
     post "/session", SessionController, :create
@@ -43,7 +43,7 @@ Amber::Server.configure do |app|
   end
 
   routes :admin, "/admin" do
-    resources "/projects", ProjectController
-    resources "/logos", LogoController
+    resources "/projects", AdminProjectController
+    resources "/logos", AdminLogoController
   end
 end
