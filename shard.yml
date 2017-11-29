@@ -36,6 +36,9 @@ dependencies:
     github: will/crystal-pg
     version: ~> 0.13.4
 
+  i18n:
+    github: TechMagister/i18n.cr
+
 development_dependencies:
   garnet_spec:
     github: amberframework/garnet-spec

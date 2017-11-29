@@ -28,18 +28,23 @@ Amber::Server.configure do |app|
   end
 
   routes :web do
-    resources "/projects", ProjectController, only: [:index, :show]
-    resources "/logos", LogoController, only: [:index, :show]
+    get "/", HomeController, :index
 
     get "/signin", SessionController, :new
     post "/session", SessionController, :create
     get "/signout", SessionController, :delete
     get "/signup", RegistrationController, :new
     post "/registration", RegistrationController, :create
+  end
 
-    get "/", HomeController, :index
-    get "/contacts", HomeController, :contacts
-    get "/about", HomeController, :about
+  ["en", "uk"].map do |locale|
+    routes :web, "/#{locale}" do
+      resources "/projects", ProjectController, only: [:index, :show]
+      resources "/logos", LogoController, only: [:index, :show]
+      get "/contacts", HomeController, :contacts
+      get "/about", HomeController, :about
+      get "/", HomeController, :index
+    end
   end
 
   routes :admin, "/admin" do
