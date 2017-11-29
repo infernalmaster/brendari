@@ -37,7 +37,7 @@ Amber::Server.configure do |app|
     post "/registration", RegistrationController, :create
   end
 
-  ["en", "uk"].map do |locale|
+  I18n.available_locales.map do |locale|
     routes :web, "/#{locale}" do
       resources "/projects", ProjectController, only: [:index, :show]
       resources "/logos", LogoController, only: [:index, :show]
