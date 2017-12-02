@@ -403,6 +403,9 @@ body {
 * {
   box-sizing: border-box; }
 
+.accent {
+  color: #FF0000; }
+
 .main-nav {
   padding: 50px 0;
   margin: auto;
@@ -414,6 +417,11 @@ body {
   z-index: 5;
   background: #fff;
   line-height: 19px; }
+
+.main-nav-home {
+  background: transparent; }
+  .main-nav-home .link-home {
+    display: none; }
 
 .main-nav-link {
   font-size: 16px;
@@ -505,9 +513,6 @@ body {
     top: 30px; }
   .main-nav.is-active .main-nav-other {
     transform: translate3d(0, 0, 0); } }
-
-.accent {
-  color: #FF0000; }
 
 .overflow-hdn {
   height: 100%;
@@ -625,56 +630,6 @@ body {
   left: 70px;
   bottom: 30px; }
 
-.bp-shape-circle {
-  position: absolute;
-  left: 70px;
-  bottom: 30px;
-  display: block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #FF0000; }
-
-.bp-shape-box {
-  position: absolute;
-  left: 70px;
-  bottom: 30px;
-  display: block;
-  width: 9px;
-  height: 9px;
-  background: #FF0000; }
-
-.bp-shape-pentagon {
-  position: absolute;
-  left: 70px;
-  bottom: 30px;
-  display: block;
-  width: 12px;
-  border-width: 6px 2.4px 0;
-  border-style: solid;
-  border-color: #FF0000 transparent; }
-  .bp-shape-pentagon:before {
-    content: "";
-    position: absolute;
-    height: 0;
-    width: 0;
-    top: -10.5px;
-    left: -2.4px;
-    border-width: 0 6px 4.5px;
-    border-style: solid;
-    border-color: transparent transparent #FF0000; }
-
-.bp-shape-triangle {
-  position: absolute;
-  left: 70px;
-  bottom: 30px;
-  display: block;
-  width: 0;
-  height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 10px solid #FF0000; }
-
 .bp-studio-short {
   font-size: 22px;
   line-height: 30px;
@@ -712,6 +667,18 @@ body {
     display: none; }
   .home-mobile {
     display: block; }
+  .mobs {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 20px; }
+  .mobs-studio-short {
+    font-size: 18px;
+    line-height: 30px;
+    color: #fff;
+    text-align: left;
+    margin: 70px 0 0; }
   .mob-section {
     height: 100vh;
     width: 100%;

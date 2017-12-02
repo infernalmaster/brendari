@@ -1,1 +1,2 @@
-hello: "yo yranslated"
+home:
+  slogan: "is a <span class='accent'>graphic design</span> studio, focused on branding and systems of visual identification."

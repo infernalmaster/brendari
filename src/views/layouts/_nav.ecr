@@ -1,4 +1,4 @@
-<nav class="main-nav js-menu">
+<nav class="main-nav js-menu <%= controller_name == "home" && action_name == :index ? "main-nav-home" : "" %>">
 
   <a class="main-nav-link link-home" href="/">
     <svg class="main-nav-icon" width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">

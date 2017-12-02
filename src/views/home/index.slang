@@ -1,12 +1,9 @@
 .home-desktop
-  .big-logo
-    object type="image/svg+xml" data="/svg/logo.svg" Brendari
+
+  object.big-logo type="image/svg+xml" data="/svg/logo.svg" Brendari
   section.big-plate
     .overflow-hdn
-      p.bp-studio-short
-        | is a
-        span.accent graphic design
-        | studio, focused on branding and systems of visual identification.
+      p.bp-studio-short== t("home.slogan")
       .bp-link-wrap
         a.bp-link href="/about"
           | About studio
@@ -53,7 +50,10 @@
 .home-mobile
   == render(partial: "layouts/_nav.ecr")
   section.mob-section
-    h2.mob-title Brendari
+    .mobs
+      object type="image/svg+xml" data="/svg/logo.svg" Brendari
+      p.mobs-studio-short== t("home.slogan")
+
     .mob-dots
       svg.dot height="11" viewbox="0 0 10 11" width="10" xmlns="http://www.w3.org/2000/svg"
         path d="M4.98.648L.5 4.35v6.15h4.098V6.563h2.898V10.5H9.5V4.35L4.98.65z" fill="#F00" fill-rule="evenodd" stroke="#F00" /
