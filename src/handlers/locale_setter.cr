@@ -20,15 +20,15 @@ class LocaleSetter < Amber::Pipe::Base
         locale, quality = splited[0], splited[1]?
         raise ArgumentError.new "Not correctly formatted" unless locale =~ /^[a-z\-0-9]+|\*$/i
 
-        locale  = locale.downcase.gsub(/-[a-z0-9]+$/i, &.upcase) # Uppercase territory
-        locale  = nil if locale == "*" # Ignore wildcards
+        locale = locale.downcase.gsub(/-[a-z0-9]+$/i, &.upcase) # Uppercase territory
+        locale = nil if locale == "*"                           # Ignore wildcards
 
         quality = quality ? quality.to_f : 1.0
 
         {locale, quality}
       end.sort do |(_, left), (_, right)|
         right <=> left
-      end.map(&.first).compact.map do |preferred| #en-US
+      end.map(&.first).compact.map do |preferred| # en-US
         preferred = preferred.downcase
         preferred_language = preferred.split("-", 2).first
 
@@ -41,5 +41,4 @@ class LocaleSetter < Amber::Pipe::Base
       nil
     end
   end
-
 end

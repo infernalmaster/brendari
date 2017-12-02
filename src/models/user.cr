@@ -6,11 +6,11 @@ class User < Granite::ORM::Base
   property password : String?
   before_save :encrypt_password
 
-  validate :email, "is required", -> (user : User) do
+  validate :email, "is required", ->(user : User) do
     (user.email != nil) && (!user.email.not_nil!.empty?)
   end
 
-  validate :password, "is to short", -> (user : User) do
+  validate :password, "is to short", ->(user : User) do
     (user.password != nil) && (user.password.not_nil!.size >= 8)
   end
 
