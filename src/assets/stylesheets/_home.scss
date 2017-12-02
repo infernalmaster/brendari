@@ -161,6 +161,20 @@ $hover-link-size: 90px;
     transform: translate3d(-105%, 0, 0);
     will-change: transform;
 }
+
+.bg-2men {
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-image: url('/images/__About%20studio%20+%20Oval%20Mask.jpg');
+}
+
+.bg-wc {
+  background-size: cover;
+  background-position: center center;
+  background-image: url('/images/__We%20created2.jpg');
+}
+
 .bp-link-wrap:hover + .bp-hover-wrap {
     transform: translate3d(0, 0, 0);
 }
@@ -196,6 +210,7 @@ $hover-link-size: 90px;
   }
   .home-mobile {
     display: block;
+    background: #121212;
   }
 
   .mobs {
@@ -217,10 +232,8 @@ $hover-link-size: 90px;
   .mob-section {
     height: 100vh;
     width: 100%;
-    background: #121212;
     text-align: center;
     position: relative;
-
   }
   .mob-title {
     font-size: 50px;

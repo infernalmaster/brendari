@@ -1,6 +1,6 @@
 <nav class="main-nav js-menu <%= controller_name == "home" && action_name == :index ? "main-nav-home" : "" %>">
 
-  <a class="main-nav-link link-home" href="/">
+  <a class="main-nav-link link-home" href="<%= lpath("/") %>">
     <svg class="main-nav-icon" width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
       <path d="M4.98.648L.5 4.35v6.15h4.098V6.563h2.898V10.5H9.5V4.35L4.98.65z" stroke="#F00" fill="#F00" fill-rule="evenodd"/>
     </svg><object class="nav-home-logo" type="image/svg+xml" data="/svg/logo.svg">Brendari</object>
@@ -16,29 +16,29 @@
       </svg>
     </div>
 
-    <%- active = context.request.path == "/about" ? "is-active" : "" %>
-    <a href="/about" class="main-nav-link <%= active %>">
+    <%- active = context.request.path == lpath("/about") ? "is-active" : "" %>
+    <a href="<%= lpath("/about") %>" class="main-nav-link <%= active %>">
       <svg class="main-nav-icon" width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
         <circle cx="45" cy="6" r="4.5" transform="translate(-40 -1)" stroke="#F00" fill="#F00" fill-rule="evenodd"></circle>
       </svg>About studio
     </a>
 
-    <%- active = context.request.path == "/projects" ? "is-active" : "" %>
-    <a href="/projects" class="main-nav-link <%= active %>">
+    <%- active = context.request.path == lpath("/projects") ? "is-active" : "" %>
+    <a href="<%= lpath("/projects") %>" class="main-nav-link <%= active %>">
       <svg class="main-nav-icon" width="9" height="9" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg">
         <path d="M.5.5h8v8h-8z" stroke="#F00" fill="#F00" fill-rule="evenodd"/>
       </svg>We created
     </a>
 
-    <%- active = context.request.path == "/logos" ? "is-active" : "" %>
-    <a href="/logos" class="main-nav-link <%= active %>">
+    <%- active = context.request.path == lpath("/logos") ? "is-active" : "" %>
+    <a href="<%= lpath("/logos") %>" class="main-nav-link <%= active %>">
       <svg class="main-nav-icon" width="11" height="11" viewBox="0 0 11 11" xmlns="http://www.w3.org/2000/svg">
         <path d="M5.5.63L.58 4.386 2.47 10.5h6.06l1.89-6.113L5.5.63z" stroke="#F00" fill="#F00" fill-rule="evenodd"/>
       </svg>Logos
     </a>
 
-    <%- active = context.request.path == "/contacts" ? "is-active" : "" %>
-    <a href="/contacts" class="main-nav-link <%= active %>">
+    <%- active = context.request.path == lpath("/contacts") ? "is-active" : "" %>
+    <a href="<%= lpath("/contacts") %>" class="main-nav-link <%= active %>">
       <svg class="main-nav-icon" width="12" height="10" viewBox="0 0 12 10" xmlns="http://www.w3.org/2000/svg">
         <path d="M6 9.028L.883.5h10.234L6 9.028z" stroke="#F00" fill="#F00" fill-rule="evenodd"/>
       </svg>Contacts

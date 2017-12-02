@@ -8,4 +8,8 @@ module I18nHelpers
     I18n.localize(object, force_locale, format, scope)
   end
 
+  def lpath(path)
+    "/#{I18n.locale}#{path}"
+  end
+
 end

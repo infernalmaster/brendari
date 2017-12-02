@@ -5,31 +5,30 @@
     .overflow-hdn
       p.bp-studio-short== t("home.slogan")
       .bp-link-wrap
-        a.bp-link href="/about"
+        a.bp-link href="#{lpath("/about")}"
           | About studio
         svg class="bp-shape" width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"
           circle cx="45" cy="6" r="4.5" transform="translate(-40 -1)" stroke="#F00" fill="#F00" fill-rule="evenodd"
         span.bp-red-line
-      .bp-hover-wrap
-        img.bphw-img src="/images/__About%20studio%20+%20Oval%20Mask.jpg" /
+      .bp-hover-wrap.bg-2men
+        / img.bphw-img src="/images/__About%20studio%20+%20Oval%20Mask.jpg" /
   .plate-divider
     .plate-divide-cross
   section.big-plate
     .overflow-hdn
       .bp-link-wrap
-        a.bp-link href="/projects"
+        a.bp-link href="#{lpath("/projects")}"
           | We created
         svg class="bp-shape" width="9" height="9" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg"
           path d="M.5.5h8v8h-8z" stroke="#F00" fill="#F00" fill-rule="evenodd"
         span.bp-red-line
-      .bp-hover-wrap
-        img.bphw-img src="/images/__We%20created2.jpg" /
+      .bp-hover-wrap.bg-wc
   .plate-divider.plate-divider-2
     .plate-divide-cross
   section.big-plate
     .overflow-hdn
       .bp-link-wrap
-        a.bp-link href="/logos"
+        a.bp-link href="#{lpath("/projects")}"
           | Logos
         svg class="bp-shape" width="11" height="11" viewBox="0 0 11 11" xmlns="http://www.w3.org/2000/svg"
           path d="M5.5.63L.58 4.386 2.47 10.5h6.06l1.89-6.113L5.5.63z" stroke="#F00" fill="#F00" fill-rule="evenodd"
@@ -39,7 +38,7 @@
   section.big-plate
     .overflow-hdn
       .bp-link-wrap
-        a.bp-link href="/contacts"
+        a.bp-link href="#{lpath("/projects")}"
           | Contacts
         svg class="bp-shape" width="12" height="10" viewBox="0 0 12 10" xmlns="http://www.w3.org/2000/svg"
           path d="M6 9.028L.883.5h10.234L6 9.028z" stroke="#F00" fill="#F00" fill-rule="evenodd"
@@ -65,18 +64,18 @@
         path d="M5.5.63L.58 4.386 2.47 10.5h6.06l1.89-6.113L5.5.63z" fill="#F00" fill-rule="evenodd" stroke="#F00" /
       svg.dot height="10" viewbox="0 0 12 10" width="12" xmlns="http://www.w3.org/2000/svg"
         path d="M6 9.028L.883.5h10.234L6 9.028z" fill="#F00" fill-rule="evenodd" stroke="#F00" /
-  section.mob-section
+  section.mob-section.bg-2men
     h2.mob-title About studio
-    a.btn-explore explore
-  section.mob-section
+    a.btn-explore href="#{lpath("/about")}" explore
+  section.mob-section.bg-wc
     h2.mob-title We created
-    a.btn-explore explore
+    a.btn-explore href="#{lpath("/projects")}" explore
   section.mob-section
     h2.mob-title Logos
-    a.btn-explore explore
+    a.btn-explore href="#{lpath("/logos")}" explore
   section.mob-section
     h2.mob-title Contacts
-    a.btn-explore href="/contacts" explore
+    a.btn-explore href="#{lpath("/contacts")}" explore
 
 
 script src="http://maps.google.com/maps/api/js"
