@@ -49,6 +49,7 @@ Amber::Server.configure do |app|
   end
 
   routes :admin, "/admin" do
+    get "/", AdminProjectController, :index
     resources "/projects", AdminProjectController
     resources "/logos", AdminLogoController
   end

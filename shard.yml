@@ -1,4 +1,4 @@
-name: blog
+name: brendari_cr
 version: 0.1.0
 
 authors:
@@ -9,8 +9,8 @@ crystal: 0.23.1
 license: UNLICENSED
 
 targets:
-  blog:
-    main: src/blog.cr
+  brendari_cr:
+    main: src/brendari_cr.cr
 
   amber:
     main: lib/amber/src/amber/cli.cr
