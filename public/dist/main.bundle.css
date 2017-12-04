@@ -738,7 +738,7 @@ body {
   padding-top: 115px; }
   .msnry-logos .msnry-aspect-inner {
     border: 1px solid #E1E1E1;
-    transition: all 0.3s; }
+    transition: border-color 0.3s; }
     .msnry-logos .msnry-aspect-inner:hover {
       border-color: #BFBFBF; }
       .msnry-logos .msnry-aspect-inner:hover .msnry-logo-color {

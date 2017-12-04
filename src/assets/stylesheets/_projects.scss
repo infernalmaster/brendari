@@ -11,7 +11,7 @@
 
     .msnry-aspect-inner {
         border: 1px solid #E1E1E1;
-        transition: all 0.3s;
+        transition: border-color 0.3s;
         &:hover {
           border-color: #BFBFBF;
           .msnry-logo-color {
