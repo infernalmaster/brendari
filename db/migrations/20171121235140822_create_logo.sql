@@ -1,8 +1,12 @@
 -- +micrate Up
 CREATE TABLE logos (
   id BIGSERIAL PRIMARY KEY,
-  image_url TEXT,
+  image_gray TEXT,
+  image_colorfull TEXT,
+  animation TEXT,
   size TEXT,
+  title_en TEXT,
+  title_uk TEXT,
   created_at TIMESTAMP,
   updated_at TIMESTAMP
 );

@@ -69,7 +69,11 @@ class AdminLogoController < ApplicationController
 
   def logo_params
     params.validation do
-      required(:image_url) { |f| !f.nil? }
+      required(:image_gray) { |f| !f.nil? }
+      required(:image_colorfull) { |f| !f.nil? }
+      required(:animation) { |f| !f.nil? }
+      required(:title_en) { |f| !f.nil? }
+      required(:title_uk) { |f| !f.nil? }
       required(:size) { |f| !f.nil? }
     end
   end

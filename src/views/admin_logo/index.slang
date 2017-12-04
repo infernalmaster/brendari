@@ -7,13 +7,11 @@ div.table-responsive
   table.table.table-striped
     thead
       tr
-        th Image_url
         th Size
         th Actions
     tbody
     - logos.each do |logo|
       tr
-        td = logo.image_url
         td = logo.size
         td
           span

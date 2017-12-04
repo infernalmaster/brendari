@@ -1,5 +1,4 @@
 h1 Show Logo
-p = logo.image_url
 p = logo.size
 p
   == link_to("back", "/logos", class: "btn btn-success btn-xs")
