@@ -414,7 +414,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 5;
+  z-index: 50;
   background: #fff;
   line-height: 19px; }
 
@@ -737,19 +737,20 @@ body {
 .msnry-logos {
   padding-top: 115px; }
   .msnry-logos .msnry-aspect-inner {
-    border: 1px solid #E1E1E1;
+    border: 1px solid #e1e1e1;
     transition: border-color 0.3s; }
     .msnry-logos .msnry-aspect-inner:hover {
-      border-color: #BFBFBF; }
+      border-color: #bfbfbf; }
       .msnry-logos .msnry-aspect-inner:hover .msnry-logo-color {
         opacity: 1; }
 
 .msnry {
   position: relative; }
+  .msnry.js-activated .msnry-item {
+    position: absolute; }
 
 .msnry-item {
-  width: 25%;
-  position: absolute; }
+  width: 25%; }
 
 .msnry-aspect {
   padding-bottom: 63.24786325%;
@@ -777,7 +778,7 @@ body {
 
 .msnry-item-title {
   font-size: 90px;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 90px;
   margin-left: 10px;
   font-weight: bold;
@@ -787,7 +788,7 @@ body {
 
 .msnry-item-dscr {
   font-size: 30px;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 55px;
   position: absolute;
   left: 10px;
@@ -800,7 +801,8 @@ body {
 .msnry-aspect-inner:hover .msnry-item-bg {
   filter: blur(5px); }
 
-.msnry-aspect-inner:hover .msnry-item-title, .msnry-aspect-inner:hover .msnry-item-dscr {
+.msnry-aspect-inner:hover .msnry-item-title,
+.msnry-aspect-inner:hover .msnry-item-dscr {
   transform: translate3d(0, 0, 0); }
 
 .msnry-item-2x2 {
@@ -853,7 +855,7 @@ body {
   font-size: 14px;
   line-height: 40px;
   letter-spacing: 1px;
-  color: #BFBFBF;
+  color: #bfbfbf;
   z-index: 5;
   padding: 0 15px;
   cursor: pointer; }

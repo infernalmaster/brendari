@@ -1,7 +1,10 @@
 // import Amber from 'amber'
 
 document.addEventListener('DOMContentLoaded', function () {
-  if (document.querySelector('.js-msnry')) {
+  const msnryContainer = document.querySelector('.js-msnry')
+  if (msnryContainer) {
+    msnryContainer.classList.add('js-activated')
+
     new Muuri('.msnry', {
       items: '.msnry-item',
       layout: {
