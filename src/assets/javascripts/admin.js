@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const progress = Math.ceil(e.loaded / e.total * 100)
       pbar.style.width = `${progress}%`
     }, false)
-    request.open('post', '/admin/upload')
+    request.open('post', fileInput.dataset.path)
     request.send(formData)
   }
 
