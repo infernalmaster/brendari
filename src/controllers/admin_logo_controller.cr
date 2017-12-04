@@ -11,7 +11,7 @@ class AdminLogoController < ApplicationController
       render("show.slang")
     else
       flash["warning"] = "Logo with ID #{params["id"]} Not Found"
-      redirect_to "/logos"
+      redirect_to "/admin/logos"
     end
   end
 
@@ -25,7 +25,8 @@ class AdminLogoController < ApplicationController
 
     if logo.valid? && logo.save
       flash["success"] = "Created Logo successfully."
-      redirect_to "/logos"
+      redirect_to "/admin/logos"
+      render("new.slang")
     else
       flash["danger"] = "Could not create Logo!"
       render("new.slang")
@@ -37,7 +38,7 @@ class AdminLogoController < ApplicationController
       render("edit.slang")
     else
       flash["warning"] = "Logo with ID #{params["id"]} Not Found"
-      redirect_to "/logos"
+      redirect_to "/admin/logos"
     end
   end
 
@@ -46,14 +47,14 @@ class AdminLogoController < ApplicationController
       logo.set_attributes(logo_params.validate!)
       if logo.valid? && logo.save
         flash["success"] = "Updated Logo successfully."
-        redirect_to "/logos"
+        redirect_to "/admin/logos"
       else
         flash["danger"] = "Could not update Logo!"
         render("edit.slang")
       end
     else
       flash["warning"] = "Logo with ID #{params["id"]} Not Found"
-      redirect_to "/logos"
+      redirect_to "/admin/logos"
     end
   end
 
@@ -63,7 +64,7 @@ class AdminLogoController < ApplicationController
     else
       flash["warning"] = "Logo with ID #{params["id"]} Not Found"
     end
-    redirect_to "/logos"
+    redirect_to "/admin/logos"
   end
 
   def logo_params

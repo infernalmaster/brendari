@@ -11,7 +11,7 @@ class AdminProjectController < ApplicationController
       render("show.slang")
     else
       flash["warning"] = "Project with ID #{params["id"]} Not Found"
-      redirect_to "/projects"
+      redirect_to "/admin/projects"
     end
   end
 
@@ -25,7 +25,7 @@ class AdminProjectController < ApplicationController
 
     if project.valid? && project.save
       flash["success"] = "Created Project successfully."
-      redirect_to "/projects"
+      redirect_to "/admin/projects"
     else
       flash["danger"] = "Could not create Project!"
       render("new.slang")
@@ -37,7 +37,7 @@ class AdminProjectController < ApplicationController
       render("edit.slang")
     else
       flash["warning"] = "Project with ID #{params["id"]} Not Found"
-      redirect_to "/projects"
+      redirect_to "/admin/projects"
     end
   end
 
@@ -46,14 +46,14 @@ class AdminProjectController < ApplicationController
       project.set_attributes(project_params.validate!)
       if project.valid? && project.save
         flash["success"] = "Updated Project successfully."
-        redirect_to "/projects"
+        redirect_to "/admin/projects"
       else
         flash["danger"] = "Could not update Project!"
         render("edit.slang")
       end
     else
       flash["warning"] = "Project with ID #{params["id"]} Not Found"
-      redirect_to "/projects"
+      redirect_to "/admin/projects"
     end
   end
 
@@ -63,7 +63,7 @@ class AdminProjectController < ApplicationController
     else
       flash["warning"] = "Project with ID #{params["id"]} Not Found"
     end
-    redirect_to "/projects"
+    redirect_to "/admin/projects"
   end
 
   def project_params

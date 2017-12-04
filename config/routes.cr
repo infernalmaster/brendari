@@ -52,5 +52,6 @@ Amber::Server.configure do |app|
     get "/", AdminProjectController, :index
     resources "/projects", AdminProjectController
     resources "/logos", AdminLogoController
+    post "/upload", UploadController, :index
   end
 end
