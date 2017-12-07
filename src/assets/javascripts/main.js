@@ -1,6 +1,10 @@
 // import Amber from 'amber'
+import Swipejs from 'swipejs'
+// TODO: barba.js
 
 document.addEventListener('DOMContentLoaded', function () {
+
+  // grid
   const msnryContainer = document.querySelector('.js-msnry')
   if (msnryContainer) {
     msnryContainer.classList.add('js-activated')
@@ -17,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   }
 
+  // GMAP
   if (document.querySelector('.js-gmap')) {
     var mapOptions = {
       zoom: 17,
@@ -38,17 +43,18 @@ document.addEventListener('DOMContentLoaded', function () {
     map.panTo(marker.getPosition())
   }
 
+  // MENU
   var menu = document.querySelector('.js-menu')
   document.querySelector('.js-open-menu').addEventListener('click', function (e) {
     e.preventDefault()
     menu.classList.add('is-active')
   })
-
   document.querySelector('.js-close-menu').addEventListener('click', function (e) {
     e.preventDefault()
     menu.classList.remove('is-active')
   });
 
+  // FIX logo color
   (() => {
     var object = document.querySelector('.nav-home-logo')
     if (!object) return
@@ -62,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
     object.addEventListener('load', show, false)
   })()
 
+  // gifs player on logos page
   document.addEventListener('mouseover', function (e) {
     if (e.target && e.target.classList.contains('js-play')) {
       const player = e.target.parentElement.querySelector('.js-player')
@@ -76,5 +83,15 @@ document.addEventListener('DOMContentLoaded', function () {
       player.classList.remove('is-active')
       player.pause()
     }
+  })
+
+  // Swipejs
+  new Swipejs(document.querySelector('.js-swipe'), {
+    draggable: true,
+    continuous: false
+    // disableScroll: true,
+    // stopPropagation: true,
+    // callback: function(index, element) {},
+    // transitionEnd: function(index, element) {}
   })
 })
