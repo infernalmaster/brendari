@@ -18,7 +18,8 @@
       span +38
       | 067 998-87-27
 
-    == render(partial: "layouts/_socials.ecr")
+    ul.socials.c-socials
+      == render(partial: "layouts/_socials.ecr")
 
     ul.footer-links
       li

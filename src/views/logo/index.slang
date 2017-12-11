@@ -15,4 +15,6 @@
             /   / source src="somevideo.webm" type="video/webm">
             /   source src="/images/gonir.mp4" type="video/mp4"
 
+== render(partial: "layouts/_footer.slang")
+
 script src="https://cdnjs.cloudflare.com/ajax/libs/muuri/0.5.1/muuri.min.js"
