@@ -396,7 +396,7 @@ html {
 body {
   background: #fff;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", HelveticaNeue, "TeX Gyre Heros", TeXGyreHeros, FreeSans, "Nimbus Sans L", "Liberation Sans", Arimo, Rooto, Helvetica, Arial, sans-serif;
   font-size: 22px;
   line-height: 1.5; }
 
@@ -974,6 +974,7 @@ body {
   opacity: 0;
   position: absolute;
   top: 0;
+  left: 0;
   transition: all 0.7s; }
 
 .msnry-logo-video {
