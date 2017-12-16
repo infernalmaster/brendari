@@ -7,7 +7,7 @@ Amber::Server.configure do |app|
     plug Amber::Pipe::Session.new
     plug Amber::Pipe::Flash.new
     plug Amber::Pipe::CSRF.new
-    # plug HTTP::CompressHandler.new
+    plug HTTP::CompressHandler.new
     plug LocaleSetter.new
   end
 
