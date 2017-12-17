@@ -18,6 +18,7 @@ Amber::Server.configure do |app|
   # All static content will run these transformations
   pipeline :static do
     plug Amber::Pipe::Error.new
+    plug CacheHeader.new
     plug Amber::Pipe::Static.new "./public"
   end
 
