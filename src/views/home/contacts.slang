@@ -28,5 +28,3 @@
       li
         a.footer-link.pdf href="#" Presentation
           span.accent PDF
-
-script src="http://maps.google.com/maps/api/js"

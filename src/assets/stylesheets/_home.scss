@@ -287,8 +287,14 @@ $hover-link-size: 90px;
     top: 87%;
     font-size: 0;
     width: 100%;
+    text-align: center;
     .dot {
       margin: 0 15px;
+      &.is-active {
+        circle, path {
+          fill: none;
+        }
+      }
     }
   }
 
