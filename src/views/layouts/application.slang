@@ -7,11 +7,11 @@ html
     meta name="viewport" content="width=device-width, initial-scale=1"
 
     style type="text/css"
-      == File.read("./public/dist/main.bundle.css")
+      == asset_inline("main.bundle.css")
 
     / link rel="stylesheet" href="/dist/main.bundle.css"
 
   body
     == content
 
-    script src="/dist/main.bundle.js"
+    script src="#{assets_url("main.bundle.js")}"
