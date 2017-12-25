@@ -9,8 +9,6 @@ html
     style type="text/css"
       == asset_inline("main.bundle.css")
 
-    / link rel="stylesheet" href="/dist/main.bundle.css"
-
   body
     == content
 

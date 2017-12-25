@@ -9,7 +9,7 @@ let config = {
     'main.bundle.css': './src/assets/stylesheets/main.scss'
   },
   output: {
-    filename: '[chunkhash].[name]',
+    filename: '[name]',
     path: path.resolve(__dirname, '../../public/dist'),
     publicPath: '/dist'
   },
@@ -60,16 +60,7 @@ let config = {
       }
     ]
   },
-  plugins: [
-    new ExtractTextPlugin('[chunkhash].main.bundle.css'),
-    function () {
-      this.plugin('done', function (stats) {
-        require('fs').writeFileSync(
-          path.join(__dirname, '..', '..', 'public', 'assetsHash.json'),
-          JSON.stringify(stats.toJson().assetsByChunkName))
-      })
-    }
-  ]
+  plugins: []
 }
 
 module.exports = config
