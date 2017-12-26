@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "barba.js": "^1.0.0",
+    "muuri": "^0.5.3",
     "swipejs": "^2.2.10"
   }
 }

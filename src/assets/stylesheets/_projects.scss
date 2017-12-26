@@ -33,12 +33,13 @@
   width: 25%;
 }
 .msnry-aspect {
-  padding-bottom: 63.24786325%;
+  padding-bottom: 66.666666%;
   height: 0;
   position: relative;
 }
 .msnry-aspect-inner {
   position: absolute;
+  box-sizing: content-box;
   top: 5px;
   left: 5px;
   right: 5px;
@@ -51,7 +52,7 @@
   width: 100%;
   position: absolute;
   z-index: -1;
-  background: url("/images/prj.jpg") center center no-repeat;
+  background: center center no-repeat;
   background-size: cover;
 
   transition: filter 0.3s;
@@ -99,14 +100,14 @@
 .msnry-item-2x1 {
   width: 50%;
   .msnry-aspect {
-    padding-bottom: 31.623931625%;
+    padding-bottom: 33.333333%;
   }
 }
 
 .msnry-item-1x2 {
   width: 25%;
   .msnry-aspect {
-    padding-bottom: 126.4957265%;
+    padding-bottom: 133.333333%;
   }
 }
 
@@ -117,7 +118,7 @@
   .msnry-item-1x2 {
     width: 50%;
     .msnry-aspect {
-      padding-bottom: 63.24786325%;
+      padding-bottom: 66.666666%;
     }
   }
 }
@@ -173,15 +174,23 @@
 }
 
 .msnry-logo {
+  position: absolute;
   width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 .msnry-logo-color {
-  width: 100%;
-  opacity: 0;
   position: absolute;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
+
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  opacity: 0;
   transition: all 0.7s;
 }
 

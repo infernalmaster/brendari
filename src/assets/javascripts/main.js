@@ -1,24 +1,9 @@
 // import Amber from 'amber'
 import Swipejs from 'swipejs'
+import Muuri from 'muuri'
 // TODO: barba.js
-
-function loadScript (src, callback) {
-  var s,
-    r,
-    t
-  r = false
-  s = document.createElement('script')
-  s.type = 'text/javascript'
-  s.src = src
-  s.onload = s.onreadystatechange = function () {
-    if (!r && (!this.readyState || this.readyState === 'complete')) {
-      r = true
-      callback()
-    }
-  }
-  t = document.getElementsByTagName('script')[0]
-  t.parentNode.insertBefore(s, t)
-}
+import LazyLoad from './lazyload.js'
+import loadScript from './loadScript.js'
 
 document.addEventListener('DOMContentLoaded', function () {
   // grid
@@ -41,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // GMAP
   const gmapsEls = document.querySelectorAll('.js-gmap')
   if (gmapsEls.length) {
+    // https://maps.googleapis.com/maps/api/staticmap?center=48.923564,%2024.711256&zoom=17&size=1000x500&format=jpg?&style=feature:road.local%7Celement:geometry%7Ccolor:0x00ff00&style=feature:landscape%7Celement:geometry.fill%7Ccolor:0x000000&style=element:labels%7Cinvert_lightness:true&style=feature:road.arterial%7Celement:labels%7Cinvert_lightness:false
     loadScript('http://maps.google.com/maps/api/js', () => {
       gmapsEls.forEach(el => {
         var mapOptions = {
@@ -126,4 +112,6 @@ document.addEventListener('DOMContentLoaded', function () {
       homeSlider.slide(index, 300)
     }))
   }
+
+  const l = new LazyLoad()
 })
