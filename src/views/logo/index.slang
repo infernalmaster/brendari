@@ -10,6 +10,8 @@
             .msnry-open-icon
             img.msnry-logo.lazyload data-src="#{uploaded_path(logo.image_gray)}"
             .msnry-logo-color.lazyload data-src="#{uploaded_path(logo.image_colorfull)}"
+            noscript
+              img.msnry-logo src="#{uploaded_path(logo.image_gray)}"
 
             / video.msnry-logo-video.js-player loop="loop"
             /   / source src="somevideo.webm" type="video/webm">

@@ -12,4 +12,7 @@ html
   body
     == content
 
+    noscript
+      style .msnry-item { width: 25%; float: left; }
+
     script src="#{assets_url("main.bundle.js")}"
