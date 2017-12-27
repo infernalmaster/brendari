@@ -15,6 +15,4 @@ div.row
               img.msnry-logo src="#{uploaded_path(logo.image_gray)}"
 
               span style="position: absolute;"
-                == link_to("read", "/admin/logos/#{logo.id}", class: "btn btn-success btn-xs")
                 == link_to("edit", "/admin/logos/#{logo.id}/edit", class: "btn btn-success btn-xs")
-                == link_to("delete", "/admin/logos/#{ logo.id }?_method=delete&_csrf=#{csrf_token}", class: "btn btn-danger btn-xs", onclick: "return confirm('Are you sure?');")
