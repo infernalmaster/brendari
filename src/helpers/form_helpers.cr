@@ -4,17 +4,17 @@ module FormHelpers
   include JasperHelpers
 
   def image_upload(name : String | Symbol, **options : Object)
-    String.build do |str|
-      str << "<div class='js-wrap'>"
-      str << input_field(type: :file, options: Kit.safe_hash({class: "js-fileupload", "data-path": "/admin/upload"}))
-      str << "<div class='progress'><div class='js-pbar progress-bar'></div></div>"
-      str << input_field(type: :hidden, options: Kit.safe_hash({name: name, id: name, class: "js-file-text", value: options[:value]?}))
-      str << "<img class='js-img img-responsive' src='#{uploaded_path(options[:value])}' />"
-      str << "</div>"
+    content(:div, {:class => "js-wrap"}) do
+      String.build do |str|
+        str << input_field(type: :file, class: "js-fileupload", "data-path": "/admin/upload")
+        str << "<div class='progress'><div class='js-pbar progress-bar'></div></div>"
+        str << input_field(type: :hidden, name: name, id: name, class: "js-file-text", value: options[:value]?)
+        str << "<img class='js-img img-responsive' src='#{uploaded_path(options[:value])}' />"
+      end
     end
   end
 
-  def uploaded_path(name : String | Nil)
+  def uploaded_path(name : String | Nil) : String
     "/uploads/#{name}"
   end
 
