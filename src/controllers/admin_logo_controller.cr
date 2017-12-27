@@ -2,7 +2,7 @@ class AdminLogoController < ApplicationController
   LAYOUT = "admin.slang"
 
   def index
-    logos = Logo.all
+    logos = Logo.all("ORDER BY position ASC")
     render("index.slang")
   end
 
@@ -40,6 +40,17 @@ class AdminLogoController < ApplicationController
       flash["warning"] = "Logo with ID #{params["id"]} Not Found"
       redirect_to "/admin/logos"
     end
+  end
+
+  def reposition
+    params["ids"].split(",").map_with_index do |id, index|
+      if logo = Logo.find id.to_s
+        logo.position = index
+        logo.save
+      end
+    end
+
+    set_response({status: "success", csrf_token: csrf_token}.to_json, 200, Content::TYPE[:json])
   end
 
   def update

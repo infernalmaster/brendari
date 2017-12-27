@@ -1,4 +1,8 @@
+import Muuri from 'muuri'
+
 document.addEventListener('DOMContentLoaded', function () {
+  const csrfTag = document.querySelector('[name="_csrf"]')
+
   const fileInputs = document.querySelectorAll('.js-fileupload')
 
   function uploadFile (fileInput) {
@@ -8,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const formData = new window.FormData()
     formData.append('file', fileInput.files[0])
-    formData.append('_csrf', document.querySelector('[name="_csrf"]').value)
+    formData.append('_csrf', csrfTag.content)
 
     const request = new window.XMLHttpRequest()
     request.onreadystatechange = function () {
@@ -21,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         wrapper.querySelector('.js-img').src = resp.full_name
         wrapper.querySelector('.js-file-text').value = resp.file
 
+        csrfTag.content = resp.csrf_token
         document.querySelectorAll('[name="_csrf"]').forEach(input => { input.value = resp.csrf_token })
       } else {
         console.log(request.responseText)
@@ -39,4 +44,39 @@ document.addEventListener('DOMContentLoaded', function () {
   fileInputs.forEach((input) => {
     input.addEventListener('change', () => { uploadFile(input) })
   })
+
+  // grid
+  const msnryContainer = document.querySelector('.js-msnry')
+  if (msnryContainer) {
+    msnryContainer.classList.add('js-activated')
+
+    const g = new Muuri('.msnry', {
+      items: '.msnry-item',
+      dragEnabled: true,
+      dragSort: true,
+      layout: {
+        fillGaps: true,
+        horizontal: false,
+        alignRight: false,
+        alignBottom: false,
+        rounding: false
+      }
+    }).on('dragReleaseEnd', () => {
+      g.synchronize()
+      const ids = Array.from(document.querySelectorAll('.msnry-item')).map(el => el.dataset.id)
+      $.ajax({
+        type: 'POST',
+        url: '/admin/logos/reposition',
+        data: {
+          ids: ids.join(','),
+          _csrf: csrfTag.content
+        },
+        success: (resp) => {
+          csrfTag.content = resp.csrf_token
+          document.querySelectorAll('[name="_csrf"]').forEach(input => { input.value = resp.csrf_token })
+        },
+        dataType: 'json'
+      })
+    })
+  }
 })

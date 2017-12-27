@@ -7,6 +7,7 @@ CREATE TABLE logos (
   size TEXT,
   title_en TEXT,
   title_uk TEXT,
+  position INTEGER,
   created_at TIMESTAMP,
   updated_at TIMESTAMP
 );

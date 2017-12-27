@@ -1,6 +1,6 @@
 class LogoController < ApplicationController
   def index
-    logos = Logo.all
+    logos = Logo.all("ORDER BY position ASC")
     render("index.slang")
   end
 

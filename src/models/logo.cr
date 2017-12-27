@@ -11,6 +11,7 @@ class Logo < Granite::ORM::Base
   field title_en : String
   field title_uk : String
   field size : String
+  field position : Int32
   timestamps
 
   def title

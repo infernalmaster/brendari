@@ -6,7 +6,8 @@ html
     meta http-equiv="X-UA-Compatible" content="IE=edge"
     meta name="viewport" content="width=device-width, initial-scale=1"
     link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    / link rel="stylesheet" href="/dist/main.bundle.css"
+    link rel="stylesheet" href="#{assets_url("main.bundle.css")}"
+    meta name="_csrf" content="#{csrf_token}"
 
   body
     div.masthead
