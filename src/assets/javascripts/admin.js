@@ -1,7 +1,7 @@
 import Muuri from 'muuri'
 
 document.addEventListener('DOMContentLoaded', function () {
-  const csrfTag = document.querySelector('[name="_csrf"]')
+  const csrfToken = document.querySelector('[name="_csrf"]').content
 
   const fileInputs = document.querySelectorAll('.js-fileupload')
 
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const formData = new window.FormData()
     formData.append('file', fileInput.files[0])
-    formData.append('_csrf', csrfTag.content)
+    formData.append('_csrf', csrfToken)
 
     const request = new window.XMLHttpRequest()
     request.onreadystatechange = function () {
@@ -24,9 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         wrapper.querySelector('.js-img').src = resp.full_name
         wrapper.querySelector('.js-file-text').value = resp.file
-
-        csrfTag.content = resp.csrf_token
-        document.querySelectorAll('[name="_csrf"]').forEach(input => { input.value = resp.csrf_token })
       } else {
         console.log(request.responseText)
       }
@@ -69,11 +66,10 @@ document.addEventListener('DOMContentLoaded', function () {
         url: '/admin/logos/reposition',
         data: {
           ids: ids.join(','),
-          _csrf: csrfTag.content
+          _csrf: csrfToken
         },
         success: (resp) => {
-          csrfTag.content = resp.csrf_token
-          document.querySelectorAll('[name="_csrf"]').forEach(input => { input.value = resp.csrf_token })
+          console.log('saved')
         },
         dataType: 'json'
       })
