@@ -13,7 +13,7 @@ footer.main-footer
     p.fc-phone +38 067 998-87-27
 
   .cf.lh-20
-    ul.c1-3.socials.f-socials
+    ul.c1-3.scls.f-socials
       == render(partial: "layouts/_socials.ecr")
     .c1-3.f-authors by Syvak & Diachok
     .c1-3.f-cprght © 2017 Brendari. All Rights Reserved
