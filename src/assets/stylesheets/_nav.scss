@@ -66,6 +66,7 @@
 
 .lang-switch {
   position: absolute;
+  z-index: 10;
   width: 25px;
   height: 17px;
   right: 80px;
@@ -73,6 +74,19 @@
   &.ls-ua {
       background: url('/svg/lang-mob-ua.svg');
   }
+  &.ls-en {
+    background: url('/svg/lang-mob-en.svg');
+  }
+}
+
+.lang-switch-text {
+  position: absolute;
+  right: 35px;
+  bottom: 0;
+  font-size: 22px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 19px;
 }
 
 .main-nav-sandwich {

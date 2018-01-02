@@ -5,7 +5,7 @@
   .c-gmap-wrap
     .c-gmap.js-gmap
 
-  .c-text-block
+  .c-text-block.js-contacts-text
 
     .vcard itemscope="true" itemtype="http://schema.org/NGO"
 

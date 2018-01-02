@@ -62,6 +62,29 @@ document.addEventListener('DOMContentLoaded', function () {
     menu.classList.remove('is-active')
   });
 
+  // fix position for contacts page
+  (() => {
+    var contactsText = document.querySelector('.js-contacts-text')
+    if (!contactsText) return
+    const homeLink = document.querySelector('.main-nav-link.link-home')
+
+    function fixPosition () {
+      if (window.innerWidth > 1023) {
+        const left = homeLink.getBoundingClientRect().x
+        contactsText.setAttribute('style', `padding-left: ${left}px`)
+      } else {
+        contactsText.removeAttribute('style')
+      }
+    }
+    fixPosition()
+
+    let resizeTimer
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer)
+      resizeTimer = setTimeout(fixPosition, 100)
+    })
+  })();
+
   // FIX logo color
   (() => {
     var object = document.querySelector('.nav-home-logo')
