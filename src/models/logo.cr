@@ -5,6 +5,7 @@ class Logo < Granite::ORM::Base
   table_name logos
 
   # id : Int64 primary key is created for you
+  field slug : String
   field image_gray : String
   field image_colorfull : String
   field animation : String

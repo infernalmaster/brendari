@@ -5,7 +5,7 @@ class ProjectController < ApplicationController
   end
 
   def show
-    if project = Project.find params["id"]
+    if project = Project.find_by(:slug, params["id"])
       render("show.slang")
     else
       flash["warning"] = "Project with ID #{params["id"]} Not Found"

@@ -68,6 +68,7 @@ class AdminProjectController < ApplicationController
 
   def project_params
     params.validation do
+      required(:slug) { |f| !f.nil? }
       required(:image_url) { |f| !f.nil? }
       required(:size) { |f| !f.nil? }
     end

@@ -5,6 +5,7 @@ class Project < Granite::ORM::Base
   table_name projects
 
   # id : Int64 primary key is created for you
+  field slug : String
   field image_url : String
   field size : String
   timestamps

@@ -6,6 +6,9 @@
 == form(action: "/admin/logos/#{logo.id.to_s}", method: logo.id ? :patch : :post) do
   == csrf_tag
   div.form-group
+    == label(name: "slug")
+    == text_field(name: "slug", value: logo.slug, placeholder: "Title", class: "form-control")
+  div.form-group
     == label(name: "image_gray")
     == image_upload(name: "image_gray", value: logo.image_gray)
   div.form-group

@@ -5,7 +5,7 @@ class LogoController < ApplicationController
   end
 
   def show
-    if logo = Logo.find params["id"]
+    if logo = Logo.find_by(:slug, params["id"])
       render("show.slang")
     else
       flash["warning"] = "Logo with ID #{params["id"]} Not Found"

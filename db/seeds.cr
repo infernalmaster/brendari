@@ -10,6 +10,7 @@ rnd = Random.new
 
 200.times do |i|
   logo = Logo.new(
+    slug: "slug #{i}",
     image_gray: "gonir.jpg",
     image_colorfull: "gonir-color.png",
     animation: "",

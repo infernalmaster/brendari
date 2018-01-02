@@ -1,6 +1,7 @@
 -- +micrate Up
 CREATE TABLE logos (
   id BIGSERIAL PRIMARY KEY,
+  slug TEXT UNIQUE,
   image_gray TEXT,
   image_colorfull TEXT,
   animation TEXT,
