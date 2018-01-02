@@ -97,24 +97,27 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if (object.contentDocument) show()
     object.addEventListener('load', show, false)
-  })()
+  })();
 
   // gifs player on logos page
-  document.addEventListener('mouseover', function (e) {
-    if (e.target && e.target.classList.contains('js-play')) {
-      const player = e.target.parentElement.querySelector('.js-player')
-      player.classList.add('is-active')
-      player.currentTime = 0
-      player.play()
-    }
-  })
-  document.addEventListener('mouseout', function (e) {
-    if (e.target && e.target.classList.contains('js-play')) {
-      const player = e.target.parentElement.querySelector('.js-player')
-      player.classList.remove('is-active')
-      player.pause()
-    }
-  })
+  (() => {
+    let video
+    document.addEventListener('mouseover', function (e) {
+      if (e.target && e.target.classList.contains('js-play')) {
+        video = document.createElement('video')
+        video.src = e.target.dataset.video
+        video.autoplay = true
+        video.loop = true
+        video.classList.add('msnry-logo-video')
+        e.target.parentNode.append(video)
+      }
+    })
+    document.addEventListener('mouseout', function (e) {
+      if (e.target && e.target.classList.contains('js-play')) {
+        video.remove()
+      }
+    })
+  })()
 
   // Home mobile slider
   if (document.querySelector('.js-swipe')) {

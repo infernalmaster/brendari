@@ -196,10 +196,6 @@
 
 .msnry-logo-video {
   width: 100%;
-  opacity: 0;
   position: absolute;
   top: 0;
-  &.is-active {
-    opacity: 1;
-  }
 }
