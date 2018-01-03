@@ -1,2 +1,14 @@
 home:
   slogan: "is a <span class='accent'>graphic design</span> studio, focused on branding and systems of visual identification."
+  explore: explore
+
+menu:
+  about: About studio
+  projects: We created
+  logos: Logos
+  contacts: Contacts
+
+general:
+  brief: Brief
+  presentation: Presentation
+  rights: "All Rights Reserved"

@@ -269,8 +269,7 @@ $hover-link-size: 90px;
     font-size: 18px;
     letter-spacing: 7px;
     line-height: 50px;
-    padding-left: 18px;
-    width: 140px;
+    padding: 0 11px 0 18px;
     display: inline-block;
     text-align: left;
     color: #FF0000;
@@ -279,8 +278,7 @@ $hover-link-size: 90px;
     position: absolute;
     top: 65%;
     left: 50%;
-
-    margin-left: -70px;
+    transform: translateX(-50%);
   }
   .mob-dots {
     position: absolute;

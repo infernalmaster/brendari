@@ -2,10 +2,10 @@ footer.main-footer
 
   ul.footer-links
     li
-      a.footer-link.doc href="#" Brief
+      a.footer-link.doc href="#"= t("general.brief")
 
     li
-      a.footer-link.pdf href="#" Presentation
+      a.footer-link.pdf href="#"= t("general.presentation")
         span.accent PDF
 
   .f-contacs
@@ -16,4 +16,4 @@ footer.main-footer
     ul.c1-3.scls.f-socials
       == render(partial: "layouts/_socials.ecr")
     .c1-3.f-authors by Syvak & Diachok
-    .c1-3.f-cprght © 2017 Brendari. All Rights Reserved
+    .c1-3.f-cprght= "© 2015 – #{Time.now.year} Brendari. #{t("general.rights")}"

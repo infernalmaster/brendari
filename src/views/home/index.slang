@@ -9,7 +9,7 @@
       p.bp-studio-short== t("home.slogan")
       .bp-link-wrap
         a.bp-link href="#{lpath("/about")}"
-          | About studio
+          = t("menu.about")
         svg class="bp-shape" width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"
           circle cx="45" cy="6" r="4.5" transform="translate(-40 -1)" stroke="#F00" fill="#F00" fill-rule="evenodd"
         span.bp-red-line
@@ -21,7 +21,7 @@
     .overflow-hdn
       .bp-link-wrap
         a.bp-link href="#{lpath("/projects")}"
-          | We created
+          = t("menu.projects")
         svg class="bp-shape" width="9" height="9" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg"
           path d="M.5.5h8v8h-8z" stroke="#F00" fill="#F00" fill-rule="evenodd"
         span.bp-red-line
@@ -32,7 +32,7 @@
     .overflow-hdn
       .bp-link-wrap
         a.bp-link href="#{lpath("/logos")}"
-          | Logos
+          = t("menu.logos")
         svg class="bp-shape" width="11" height="11" viewBox="0 0 11 11" xmlns="http://www.w3.org/2000/svg"
           path d="M5.5.63L.58 4.386 2.47 10.5h6.06l1.89-6.113L5.5.63z" stroke="#F00" fill="#F00" fill-rule="evenodd"
         span.bp-red-line
@@ -42,7 +42,7 @@
     .overflow-hdn
       .bp-link-wrap
         a.bp-link href="#{lpath("/contacts")}"
-          | Contacts
+          = t("menu.contacts")
         svg class="bp-shape" width="12" height="10" viewBox="0 0 12 10" xmlns="http://www.w3.org/2000/svg"
           path d="M6 9.028L.883.5h10.234L6 9.028z" stroke="#F00" fill="#F00" fill-rule="evenodd"
         span.bp-red-line
@@ -56,18 +56,18 @@
         object type="image/svg+xml" data="/svg/logo.svg" Brendari
         p.mobs-studio-short== t("home.slogan")
     section.mob-section.bg-2men
-      h2.mob-title About studio
-      a.btn-explore href="#{lpath("/about")}" explore
+      h2.mob-title= t("menu.about")
+      a.btn-explore href="#{lpath("/about")}"= t("home.explore")
     section.mob-section.bg-wc
-      h2.mob-title We created
-      a.btn-explore href="#{lpath("/projects")}" explore
+      h2.mob-title= t("menu.projects")
+      a.btn-explore href="#{lpath("/projects")}"= t("home.explore")
     section.mob-section
-      h2.mob-title Logos
-      a.btn-explore href="#{lpath("/logos")}" explore
+      h2.mob-title= t("menu.logos")
+      a.btn-explore href="#{lpath("/logos")}"= t("home.explore")
     section.mob-section
       .gmap.js-gmap
-      h2.mob-title Contacts
-      a.btn-explore href="#{lpath("/contacts")}" explore
+      h2.mob-title= t("menu.contacts")
+      a.btn-explore href="#{lpath("/contacts")}"= t("home.explore")
 
   == render(partial: "layouts/_nav.ecr")
 

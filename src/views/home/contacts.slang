@@ -34,8 +34,8 @@
 
     ul.footer-links
       li
-        a.footer-link.doc href="#" Brief
+        a.footer-link.doc href="#"= t("general.brief")
 
       li
-        a.footer-link.pdf href="#" Presentation
+        a.footer-link.pdf href="#"= t("general.presentation")
           span.accent PDF

@@ -20,28 +20,28 @@
     <a href="<%= lpath("/about") %>" class="main-nav-link <%= active %>">
       <svg class="main-nav-icon" width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
         <circle cx="45" cy="6" r="4.5" transform="translate(-40 -1)" stroke="#F00" fill="#F00" fill-rule="evenodd"></circle>
-      </svg>About studio
+      </svg><%= t("menu.about") %>
     </a>
 
     <%- active = context.request.path == lpath("/projects") ? "is-active" : "" %>
     <a href="<%= lpath("/projects") %>" class="main-nav-link <%= active %>">
       <svg class="main-nav-icon" width="9" height="9" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg">
         <path d="M.5.5h8v8h-8z" stroke="#F00" fill="#F00" fill-rule="evenodd"/>
-      </svg>We created
+      </svg><%= t("menu.projects") %>
     </a>
 
     <%- active = context.request.path == lpath("/logos") ? "is-active" : "" %>
     <a href="<%= lpath("/logos") %>" class="main-nav-link <%= active %>">
       <svg class="main-nav-icon" width="11" height="11" viewBox="0 0 11 11" xmlns="http://www.w3.org/2000/svg">
         <path d="M5.5.63L.58 4.386 2.47 10.5h6.06l1.89-6.113L5.5.63z" stroke="#F00" fill="#F00" fill-rule="evenodd"/>
-      </svg>Logos
+      </svg><%= t("menu.logos") %>
     </a>
 
     <%- active = context.request.path == lpath("/contacts") ? "is-active" : "" %>
     <a href="<%= lpath("/contacts") %>" class="main-nav-link <%= active %>">
       <svg class="main-nav-icon" width="12" height="10" viewBox="0 0 12 10" xmlns="http://www.w3.org/2000/svg">
         <path d="M6 9.028L.883.5h10.234L6 9.028z" stroke="#F00" fill="#F00" fill-rule="evenodd"/>
-      </svg>Contacts
+      </svg><%= t("menu.contacts") %>
     </a>
 
   </div>

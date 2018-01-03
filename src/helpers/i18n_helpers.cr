@@ -15,6 +15,10 @@ module I18nHelpers
     I18n.locale == "ua" ? "en" : "ua"
   end
 
+  def iso_locale
+    I18n.locale == "ua" ? "uk" : "en"
+  end
+
   def change_locale_path
     path_without_locale = context.request.path.lchop("/#{I18n.locale}")
     "/#{next_locale}#{path_without_locale}"

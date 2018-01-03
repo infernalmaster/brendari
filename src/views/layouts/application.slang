@@ -1,5 +1,5 @@
 doctype html
-html
+html lang="#{iso_locale}"
   head
     title Blog using Amber
     meta charset="utf-8"
