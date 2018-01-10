@@ -1,32 +1,29 @@
-name: brendari_cr
+name: br2
 version: 0.1.0
 
 authors:
-  - Amber <amberframework.org>
+  - Rostyslav Diachok <infernalmaster1@gmail.com>
 
-crystal: 0.23.1
+crystal: 0.24.1
 
 license: UNLICENSED
 
 targets:
-  brendari_cr:
-    main: src/brendari_cr.cr
-
-  amber:
-    main: lib/amber/src/amber/cli.cr
+  br2:
+    main: src/br2.cr
 
 dependencies:
   amber:
     github: amberframework/amber
-    version: 0.3.6
+    version: 0.6.0
 
   granite_orm:
     github: amberframework/granite-orm
-    version: ~> 0.7.7
+    version: ~> 0.8.0
 
   quartz_mailer:
     github: amberframework/quartz-mailer
-    version: ~> 0.2.0
+    version: ~> 0.4.0
 
   jasper_helpers:
     github: amberframework/jasper-helpers
@@ -34,7 +31,7 @@ dependencies:
 
   pg:
     github: will/crystal-pg
-    version: ~> 0.13.4
+    version: ~> 0.14.1
 
   i18n:
     github: TechMagister/i18n.cr

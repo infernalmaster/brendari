@@ -89,7 +89,7 @@ LazyLoad.prototype = {
           self.observer.unobserve(entry.target)
           let src = entry.target.getAttribute(self.settings.src)
           let srcset = entry.target.getAttribute(self.settings.srcset)
-          if (entry.target.tagName.toLowerCase() === 'img') {
+          if (entry.target.tagName.toLowerCase() === 'img' || entry.target.tagName.toLowerCase() === 'video') {
             if (src) {
               entry.target.src = src
             }
@@ -121,7 +121,7 @@ LazyLoad.prototype = {
     this.images.forEach(function (image) {
       let src = image.getAttribute(self.settings.src)
       let srcset = image.getAttribute(self.settings.srcset)
-      if (image.tagName.toLowerCase() === 'img') {
+      if (image.tagName.toLowerCase() === 'img' || image.tagName.toLowerCase() === 'video') {
         if (src) {
           image.src = src
         }

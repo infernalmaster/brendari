@@ -13,8 +13,7 @@
         svg class="bp-shape" width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"
           circle cx="45" cy="6" r="4.5" transform="translate(-40 -1)" stroke="#F00" fill="#F00" fill-rule="evenodd"
         span.bp-red-line
-      .bp-hover-wrap.bg-2men
-        / img.bphw-img src="/images/__About%20studio%20+%20Oval%20Mask.jpg" /
+      .bp-hover-wrap.bg-2men.load-now data-src="/images/__About%20studio%20+%20Oval%20Mask.jpg"
   .plate-divider
     .plate-divide-cross
   section.big-plate
@@ -25,17 +24,19 @@
         svg class="bp-shape" width="9" height="9" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg"
           path d="M.5.5h8v8h-8z" stroke="#F00" fill="#F00" fill-rule="evenodd"
         span.bp-red-line
-      .bp-hover-wrap.bg-wc
+      .bp-hover-wrap.bg-cover.load-now data-src="/images/__We%20created2.jpg"
   .plate-divider.plate-divider-2
     .plate-divide-cross
   section.big-plate
     .overflow-hdn
-      .bp-link-wrap
+      .bp-link-wrap.js-play-home-video
         a.bp-link href="#{lpath("/logos")}"
           = t("menu.logos")
         svg class="bp-shape" width="11" height="11" viewBox="0 0 11 11" xmlns="http://www.w3.org/2000/svg"
           path d="M5.5.63L.58 4.386 2.47 10.5h6.06l1.89-6.113L5.5.63z" stroke="#F00" fill="#F00" fill-rule="evenodd"
         span.bp-red-line
+      .bp-hover-wrap
+        video.home-video.load-now.js-home-video data-src="/images/gonir.mp4" loop=""
   .plate-divider.plate-divider-3
     .plate-divide-cross
   section.big-plate
@@ -55,13 +56,14 @@
       .mobs
         object type="image/svg+xml" data="/svg/logo.svg" Brendari
         p.mobs-studio-short== t("home.slogan")
-    section.mob-section.bg-2men
+    section.mob-section.bg-2men.load-now data-src="/images/__About%20studio%20+%20Oval%20Mask.jpg"
       h2.mob-title= t("menu.about")
       a.btn-explore href="#{lpath("/about")}"= t("home.explore")
-    section.mob-section.bg-wc
+    section.mob-section.bg-cover.load-now data-src="/images/__We%20created2.jpg"
       h2.mob-title= t("menu.projects")
       a.btn-explore href="#{lpath("/projects")}"= t("home.explore")
     section.mob-section
+      video.home-mob-video.load-now.js-home-mob-video data-src="/images/gonir.mp4" loop="" muted="" playsinline=""
       h2.mob-title= t("menu.logos")
       a.btn-explore href="#{lpath("/logos")}"= t("home.explore")
     section.mob-section

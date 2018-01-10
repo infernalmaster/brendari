@@ -1,2 +1,0 @@
-pg:
-  database: postgres://authuser:authuser@localhost:5432/blog_development

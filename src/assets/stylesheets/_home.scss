@@ -157,6 +157,7 @@ $hover-link-size: 90px;
     height: 100%;
     top: 0;
     left: 0;
+    background-color: #000;
     transition: transform 0.3s;
     transform: translate3d(-105%, 0, 0);
     will-change: transform;
@@ -166,27 +167,24 @@ $hover-link-size: 90px;
   background-position-y: center;
   background-repeat: no-repeat;
   background-size: 100% auto;
-  background-image: url('/images/__About%20studio%20+%20Oval%20Mask.jpg');
-}
-
-.bg-wc {
-  background-size: cover;
-  background-position: center center;
-  background-image: url('/images/__We%20created2.jpg');
 }
 
 .bp-link-wrap:hover + .bp-hover-wrap {
     transform: translate3d(0, 0, 0);
 }
 
-.bphw-img {
-    width: 100%;
-    height: auto;
-}
 
 .gmap {
     height: 100%;
 }
+
+.home-video {
+  width: 100%;
+  position: absolute;
+  top: calc(50% - 75px);
+  transform: translateY(-50%);
+}
+
 
 
 //.grid {
@@ -296,4 +294,10 @@ $hover-link-size: 90px;
     }
   }
 
+  .home-mob-video {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
 }

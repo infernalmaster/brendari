@@ -5,7 +5,7 @@ import Muuri from 'muuri'
 import LazyLoad from './lazyload.js'
 import loadScript from './loadScript.js'
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () { setTimeout(() => {
   // grid
   const msnryContainer = document.querySelector('.js-msnry')
   if (msnryContainer) {
@@ -117,11 +117,26 @@ document.addEventListener('DOMContentLoaded', function () {
         video.remove()
       }
     })
+  })();
+
+  (() => {
+    const btn = document.querySelector('.js-play-home-video')
+    const video = document.querySelector('.js-home-video')
+    if (video) {
+      btn.addEventListener('mouseover', function (e) {
+        video.currentTime = 0
+        video.play()
+      })
+      btn.addEventListener('mouseout', function (e) {
+        video.pause()
+      })
+    }
   })()
 
   // Home mobile slider
   if (document.querySelector('.js-swipe')) {
-    var dots = document.querySelectorAll('.js-mob-dot')
+    const video = document.querySelector('.js-home-mob-video')
+    const dots = document.querySelectorAll('.js-mob-dot')
     const homeSlider = new Swipejs(document.querySelector('.js-swipe'), {
       draggable: true,
       continuous: false,
@@ -131,6 +146,13 @@ document.addEventListener('DOMContentLoaded', function () {
       transitionEnd: function (index, element) {
         dots.forEach(d => d.classList.remove('is-active'))
         dots[index].classList.add('is-active')
+
+        if (index === 3) {
+          video.play()
+        } else {
+          video.pause()
+          video.currentTime = 0
+        }
       }
     })
 
@@ -139,5 +161,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }))
   }
 
-  const l = new LazyLoad()
-})
+  new LazyLoad()
+  new LazyLoad(document.querySelectorAll('.load-now')).loadAndDestroy()
+}, 0) })

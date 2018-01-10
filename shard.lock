@@ -2,19 +2,19 @@ version: 1.0
 shards:
   amber:
     github: amberframework/amber
-    version: 0.3.6
+    version: 0.6.0
 
   callback:
     github: mosop/callback
     version: 0.6.3
 
   cli:
-    github: mosop/cli
-    version: 0.6.10
+    github: amberframework/cli
+    version: 0.7.0
 
   db:
     github: crystal-lang/crystal-db
-    version: 0.4.3
+    version: 0.5.0
 
   garnet_spec:
     github: amberframework/garnet-spec
@@ -22,7 +22,7 @@ shards:
 
   granite_orm:
     github: amberframework/granite-orm
-    version: 0.7.8
+    version: 0.8.1
 
   i18n:
     github: TechMagister/i18n.cr
@@ -30,7 +30,7 @@ shards:
 
   jasper_helpers:
     github: amberframework/jasper-helpers
-    version: 0.1.6
+    version: 0.1.7
 
   kilt:
     github: jeromegn/kilt
@@ -42,7 +42,7 @@ shards:
 
   mysql:
     github: crystal-lang/crystal-mysql
-    version: 0.3.3
+    version: 0.4.0
 
   optarg:
     github: mosop/optarg
@@ -50,11 +50,11 @@ shards:
 
   pg:
     github: will/crystal-pg
-    version: 0.13.4
+    version: 0.14.1
 
   quartz_mailer:
     github: amberframework/quartz-mailer
-    version: 0.2.1
+    version: 0.4.0
 
   radix:
     github: luislavena/radix
@@ -78,11 +78,11 @@ shards:
 
   slang:
     github: jeromegn/slang
-    version: 1.7.0
+    commit: 33d5c2c2075460094784904e7ecdd3cd21c8d36e
 
   smtp:
-    github: raydf/smtp.cr
-    version: 0.1
+    github: amberframework/smtp.cr
+    version: 0.3.0
 
   spinner:
     github: askn/spinner
@@ -90,13 +90,13 @@ shards:
 
   sqlite3:
     github: crystal-lang/crystal-sqlite3
-    version: 0.8.3
+    version: 0.9.0
 
   string_inflection:
     github: mosop/string_inflection
     version: 0.2.1
 
   teeplate:
-    github: mosop/teeplate
-    version: 0.4.5
+    github: amberframework/teeplate
+    version: 0.5.0
 

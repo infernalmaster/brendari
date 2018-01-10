@@ -34,3 +34,8 @@ $mobile: "(max-width: 600px)";
   height: 0;
   overflow: hidden;
 }
+
+.bg-cover {
+  background: center center no-repeat;
+  background-size: cover;
+}

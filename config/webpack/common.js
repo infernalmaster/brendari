@@ -1,6 +1,6 @@
-const webpack = require('webpack')
-const path = require('path')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const webpack = require('webpack');
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 let config = {
   entry: {
@@ -61,6 +61,6 @@ let config = {
     ]
   },
   plugins: []
-}
+};
 
-module.exports = config
+module.exports = config;

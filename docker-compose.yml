@@ -1,55 +1,42 @@
 version: '2'
 
 services:
-  web:
-    build: .
-    image: blog
-    command: bash -c 'npm install && npm run watch'
-    working_dir: /app/local
-    volumes:
-      - '.:/app/local'
-
   app:
     build: .
-    image: blog
-    command: 'amber watch'
-    working_dir: /app/local
+    image: br2
+    command: amber watch
     environment:
-      DATABASE_URL: postgres://admin:password@db:5432/blog_development
-      SMTP_URL: mail:1025
+      DATABASE_URL: postgres://admin:password@db:5432/br2_development
     ports:
-      - '3000:3000'
+      - 3000:3000
     links:
       - db
-      - mail
     volumes:
-      - '.:/app/local'
+    - .:/app
+    - nodes:/app/node_modules
+    - shards:/app/lib
 
   migrate:
     build: .
-    image: blog
+    image: br2
     command: bash -c 'while ! nc -q 1 db 5432 </dev/null; do sleep 1; done && amber db migrate seed'
-    working_dir: /app/local
     environment:
-      DATABASE_URL: postgres://admin:password@db:5432/blog_development
+      DATABASE_URL: postgres://admin:password@db:5432/br2_development
     volumes:
-      - '.:/app/local'
+      - .:/app
     links:
       - db
-
-  mail:
-    image: drujensen/mailcatcher:latest
-    ports:
-      - '1080:1080'
 
   db:
     image: postgres
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: blog_development
+      POSTGRES_DB: br2_development
     volumes:
-      - 'db:/var/lib/postgres/data'
+      - db:/var/lib/postgres/data
 
 volumes:
   db:
+  nodes:
+  shards:

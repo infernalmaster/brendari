@@ -1,19 +1,33 @@
-secret_key_base: Uy4njiu8jYAIBpcngmiLrx14wJ77vvqZ0uYbET7-Wyc
+secret_key_base: lMTJYJVly5ZM0jzGyDFItdQaugDEqi7GDAEyIUKUVZ8
 port: 3000
-name: blog
-log: "::Logger.new(STDOUT)"
-log_level: "::Logger::INFO"
-color: true
+name: br2
+logging:
+  severity: debug
+  colorize: true
+  filter:
+    - password
+    - confirm_password
+  skip:
+    -
+  context:
+    - request
+    - session
+    - headers
+    - cookies
+    - params
+
 host: 0.0.0.0
-port_reuse: false
-process_count: (ENV[%(AMBER_PROCESS_COUNT)]? || 1).to_i
-ssl_key_file:
-ssl_cert_file:
+port_reuse: true
+process_count: 1
+# ssl_key_file:
+# ssl_cert_file:
 redis_url: "redis://localhost:6379"
+database_url: postgres://authuser:authuser@localhost:5432/blog_development
 session:
   key: amber.session
-  store: :signed_cookie
+  store: signed_cookie
   expires: 0
+
 secrets:
   description: Store your development secrets credentials and settings here.
-  database: postgres://postgres:@localhost:5432/blog_development
+
