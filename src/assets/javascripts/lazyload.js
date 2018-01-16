@@ -20,30 +20,33 @@ const defaults = {
 }
 
 /**
-* Merge two or more objects. Returns a new object.
-* @private
-* @param {Boolean}  deep     If true, do a deep (or recursive) merge [optional]
-* @param {Object}   objects  The objects to merge together
-* @returns {Object}          Merged values of defaults and options
-*/
+ * Merge two or more objects. Returns a new object.
+ * @private
+ * @param {Boolean}  deep     If true, do a deep (or recursive) merge [optional]
+ * @param {Object}   objects  The objects to merge together
+ * @returns {Object}          Merged values of defaults and options
+ */
 const extend = function () {
   let extended = {}
   let deep = false
   let i = 0
   let length = arguments.length
 
-    /* Check if a deep merge */
+  /* Check if a deep merge */
   if (Object.prototype.toString.call(arguments[0]) === '[object Boolean]') {
     deep = arguments[0]
     i++
   }
 
-    /* Merge the object into the extended object */
+  /* Merge the object into the extended object */
   let merge = function (obj) {
     for (let prop in obj) {
       if (Object.prototype.hasOwnProperty.call(obj, prop)) {
         /* If deep merge and property is an object, merge properties */
-        if (deep && Object.prototype.toString.call(obj[prop]) === '[object Object]') {
+        if (
+          deep &&
+          Object.prototype.toString.call(obj[prop]) === '[object Object]'
+        ) {
           extended[prop] = extend(true, extended[prop], obj[prop])
         } else {
           extended[prop] = obj[prop]
@@ -61,7 +64,7 @@ const extend = function () {
   return extended
 }
 
-function LazyLoad (images, options) {
+function LazyLoad(images, options) {
   this.settings = extend(defaults, options || {})
   this.images = images || document.querySelectorAll(this.settings.selector)
   this.observer = null
@@ -89,7 +92,10 @@ LazyLoad.prototype = {
           self.observer.unobserve(entry.target)
           let src = entry.target.getAttribute(self.settings.src)
           let srcset = entry.target.getAttribute(self.settings.srcset)
-          if (entry.target.tagName.toLowerCase() === 'img' || entry.target.tagName.toLowerCase() === 'video') {
+          if (
+            entry.target.tagName.toLowerCase() === 'img' ||
+            entry.target.tagName.toLowerCase() === 'video'
+          ) {
             if (src) {
               entry.target.src = src
             }
@@ -109,19 +115,26 @@ LazyLoad.prototype = {
   },
 
   loadAndDestroy: function () {
-    if (!this.settings) { return }
+    if (!this.settings) {
+      return
+    }
     this.loadImages()
     this.destroy()
   },
 
   loadImages: function () {
-    if (!this.settings) { return }
+    if (!this.settings) {
+      return
+    }
 
     let self = this
     this.images.forEach(function (image) {
       let src = image.getAttribute(self.settings.src)
       let srcset = image.getAttribute(self.settings.srcset)
-      if (image.tagName.toLowerCase() === 'img' || image.tagName.toLowerCase() === 'video') {
+      if (
+        image.tagName.toLowerCase() === 'img' ||
+        image.tagName.toLowerCase() === 'video'
+      ) {
         if (src) {
           image.src = src
         }
@@ -135,7 +148,9 @@ LazyLoad.prototype = {
   },
 
   destroy: function () {
-    if (!this.settings) { return }
+    if (!this.settings) {
+      return
+    }
     this.observer.disconnect()
     this.settings = null
   }
