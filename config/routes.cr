@@ -2,13 +2,16 @@ Amber::Server.configure do |app|
   pipeline :web, :admin do
     # Plug is the method to use connect a pipe (middleware)
     # A plug accepts an instance of HTTP::Handler
+    plug Amber::Pipe::PoweredByAmber.new
+    # plug Amber::Pipe::ClientIp.new(["X-Forwarded-For"])
+    plug Citrine::I18n::Handler.new
     plug Amber::Pipe::Error.new
     plug Amber::Pipe::Logger.new
     plug Amber::Pipe::Session.new
     plug Amber::Pipe::Flash.new
     plug Amber::Pipe::CSRF.new
     plug HTTP::CompressHandler.new
-    plug LocaleSetter.new
+    plug Amber::Pipe::Reload.new if Amber.env.development?
   end
 
   pipeline :admin do
@@ -17,6 +20,8 @@ Amber::Server.configure do |app|
 
   # All static content will run these transformations
   pipeline :static do
+    plug Amber::Pipe::PoweredByAmber.new
+    # plug Amber::Pipe::ClientIp.new(["X-Forwarded-For"])
     plug Amber::Pipe::Error.new
     plug CacheHeader.new
     plug Amber::Pipe::Static.new "./public"
