@@ -445,9 +445,11 @@ body {
     margin-right: 0; }
   .main-nav-link.is-active {
     color: #9E9E9E; }
-    .main-nav-link.is-active svg circle, .main-nav-link.is-active svg path {
+    .main-nav-link.is-active svg circle,
+    .main-nav-link.is-active svg path {
       fill: none; }
-  .main-nav-link:hover svg circle, .main-nav-link:hover svg path {
+  .main-nav-link:hover svg circle,
+  .main-nav-link:hover svg path {
     fill: none; }
 
 .main-nav-icon {
@@ -471,8 +473,8 @@ body {
   height: 17px;
   right: 80px;
   top: 54px; }
-  .lang-switch.ls-ua {
-    background: url("/svg/lang-mob-ua.svg"); }
+  .lang-switch.ls-uk {
+    background: url("/svg/lang-mob-uk.svg"); }
   .lang-switch.ls-en {
     background: url("/svg/lang-mob-en.svg"); }
 

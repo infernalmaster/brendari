@@ -8,19 +8,27 @@ module I18nHelpers
   end
 
   def lpath(path)
-    "/#{I18n.locale}#{path}"
+    "/#{translate_locale(I18n.locale)}#{path}"
   end
 
   def next_locale
-    I18n.locale == "ua" ? "en" : "ua"
+    I18n.locale == "uk" ? "en" : "uk"
+  end
+
+  def translate_locale(loc)
+    I18nHelpers.translate_locale(loc)
+  end
+
+  def self.translate_locale(loc)
+    loc == "uk" ? "ua" : loc
   end
 
   def iso_locale
-    I18n.locale == "ua" ? "uk" : "en"
+    I18n.locale
   end
 
   def change_locale_path
-    path_without_locale = context.request.path.lchop("/#{I18n.locale}")
-    "/#{next_locale}#{path_without_locale}"
+    path_without_locale = context.request.path.lchop("/#{translate_locale(I18n.locale)}")
+    "/#{translate_locale(next_locale)}#{path_without_locale}"
   end
 end

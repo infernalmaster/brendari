@@ -5,6 +5,7 @@ Amber::Server.configure do |app|
     plug Amber::Pipe::PoweredByAmber.new
     # plug Amber::Pipe::ClientIp.new(["X-Forwarded-For"])
     plug Citrine::I18n::Handler.new
+    plug LocaleFromRoute.new
     plug Amber::Pipe::Error.new
     plug Amber::Pipe::Logger.new
     plug Amber::Pipe::Session.new
@@ -44,7 +45,7 @@ Amber::Server.configure do |app|
   end
 
   I18n.available_locales.map do |locale|
-    routes :web, "/#{locale}" do
+    routes :web, "/#{I18nHelpers.translate_locale(locale)}" do
       resources "/projects", ProjectController, only: [:index, :show]
       resources "/logos", LogoController, only: [:index, :show]
       get "/contacts", HomeController, :contacts

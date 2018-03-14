@@ -5,6 +5,8 @@ WORKDIR /app
 COPY shard.* /app/
 RUN crystal deps
 
-ADD . /app
+COPY . /app
+
+RUN rm -rf /app/node_modules
 
 CMD amber watch

@@ -1,7 +1,7 @@
 .home-desktop
 
   a class="lang-switch ls-#{next_locale}" href="#{change_locale_path}"
-    .lang-switch-text= next_locale
+    .lang-switch-text= translate_locale(next_locale)
 
   object.big-logo type="image/svg+xml" data="/svg/logo.svg" Brendari
   section.big-plate
